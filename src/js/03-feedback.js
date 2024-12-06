@@ -18,19 +18,18 @@ refs.form.addEventListener("input", (event) => {
   formData[event.target.name] = event.target.value;
 });
 
-savedValueMessage();
-savedEmailValue();
-saveResultat(formData);
-
 function onSubmitForm(event) {
   event.preventDefault();
+  saveResultat();
+  savedValueMessage();
+  savedEmailValue();
 
   event.currentTarget.reset();
   localStorage.removeItem(STORAGE_MESSAGE);
   localStorage.removeItem(STORAGE_EMAIL);
 }
 
-function saveResultat(event) {
+function saveResultat() {
   console.log(formData);
 }
 
